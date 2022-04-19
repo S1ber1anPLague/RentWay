@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48587511-DCAA-4BD7-8BD6-CDA040ECEFD3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lab_4</RootNamespace>
+    <AssemblyName>Lab_4</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationData.cs" />
+    <Compile Include="DataBase\ApplicationContext.cs" />
+    <Compile Include="DataBase\DefaultData.cs" />
+    <Compile Include="DataBase\Mapper.cs" />
+    <Compile Include="DataBase\Model\BodyType.cs" />
+    <Compile Include="DataBase\Model\Car.cs" />
+    <Compile Include="DataBase\Model\CarBrand.cs" />
+    <Compile Include="DataBase\Model\Reception.cs" />
+    <Compile Include="DataBase\Model\Rent.cs" />
+    <Compile Include="DataBase\Model\Service.cs" />
+    <Compile Include="DataBase\Model\ServiceInRent.cs" />
+    <Compile Include="DataBase\Model\User.cs" />
+    <Compile Include="Localizations.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Interfaces\ICar.cs" />
+    <Compile Include="Models\Interfaces\IClient.cs" />
+    <Compile Include="Models\Interfaces\IEmployee.cs" />
+    <Compile Include="Models\Interfaces\IRent.cs" />
+    <Compile Include="Models\Interfaces\IService.cs" />
+    <Compile Include="Models\Interfaces\IStat.cs" />
+    <Compile Include="Models\Library\Car.cs" />
+    <Compile Include="Models\Library\Person.cs" />
+    <Compile Include="Models\Library\Reception.cs" />
+    <Compile Include="Models\Library\ReceptionInfo.cs" />
+    <Compile Include="Models\Library\Rent.cs" />
+    <Compile Include="Models\Library\Service.cs" />
+    <Compile Include="Models\Library\ServiceInRent.cs" />
+    <Compile Include="Models\Search\SearchCarParam.cs" />
+    <Compile Include="Models\Search\SearchClientParam.cs" />
+    <Compile Include="Models\Search\SearchEmployeeParam.cs" />
+    <Compile Include="Models\Search\SearchReceptionParam.cs" />
+    <Compile Include="Models\Search\SearchRentParam.cs" />
+    <Compile Include="Models\Search\SearchServiceParam.cs" />
+    <Compile Include="Models\Statistics\CarsStatInfo.cs" />
+    <Compile Include="Models\Statistics\ClientsStatInfo.cs" />
+    <Compile Include="Models\Statistics\Info.cs" />
+    <Compile Include="Models\Statistics\TotalStatInfo.cs" />
+    <Compile Include="Utils\SimpleValidators.cs" />
+    <Compile Include="Utils\SortableBindingList.cs" />
+    <Compile Include="Views\ReceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReceptionDialog.Designer.cs">
+      <DependentUpon>ReceptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RentHistoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RentHistoryView.Designer.cs">
+      <DependentUpon>RentHistoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Rents.Designer.cs">
+      <DependentUpon>Rents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Car.Designer.cs">
+      <DependentUpon>Car.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CarBodyTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CarBodyTypes.Designer.cs">
+      <DependentUpon>CarBodyTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CarBrands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CarBrands.Designer.cs">
+      <DependentUpon>CarBrands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CarEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CarEdit.Designer.cs">
+      <DependentUpon>CarEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cars.Designer.cs">
+      <DependentUpon>Cars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClientEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ClientEdit.Designer.cs">
+      <DependentUpon>ClientEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Clients.Designer.cs">
+      <DependentUpon>Clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeEdit.Designer.cs">
+      <DependentUpon>EmployeeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ServiceView.Designer.cs">
+      <DependentUpon>ServiceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\RentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RentView.Designer.cs">
+      <DependentUpon>RentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RentCreateEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RentCreateEdit.Designer.cs">
+      <DependentUpon>RentCreateEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ServiceEdit.Designer.cs">
+      <DependentUpon>ServiceEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Services.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Services.Designer.cs">
+      <DependentUpon>Services.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics\CarsSummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Statistics\CarsSummaryView.Designer.cs">
+      <DependentUpon>CarsSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics\ClientsSummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Statistics\ClientsSummaryView.Designer.cs">
+      <DependentUpon>ClientsSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics\SummaryMenuView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Statistics\SummaryMenuView.Designer.cs">
+      <DependentUpon>SummaryMenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics\TotalSummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Statistics\TotalSummaryView.Designer.cs">
+      <DependentUpon>TotalSummaryView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\ReceptionDialog.resx">
+      <DependentUpon>ReceptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RentHistoryView.resx">
+      <DependentUpon>RentHistoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Rents.resx">
+      <DependentUpon>Rents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Car.resx">
+      <DependentUpon>Car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CarBodyTypes.resx">
+      <DependentUpon>CarBodyTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CarBrands.resx">
+      <DependentUpon>CarBrands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CarEdit.resx">
+      <DependentUpon>CarEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cars.resx">
+      <DependentUpon>Cars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClientEdit.resx">
+      <DependentUpon>ClientEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Clients.resx">
+      <DependentUpon>Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeEdit.resx">
+      <DependentUpon>EmployeeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ServiceView.resx">
+      <DependentUpon>ServiceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\RentView.resx">
+      <DependentUpon>RentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RentCreateEdit.resx">
+      <DependentUpon>RentCreateEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ServiceEdit.resx">
+      <DependentUpon>ServiceEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Services.resx">
+      <DependentUpon>Services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Statistics\CarsSummaryView.resx">
+      <DependentUpon>CarsSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Statistics\ClientsSummaryView.resx">
+      <DependentUpon>ClientsSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Statistics\SummaryMenuView.resx">
+      <DependentUpon>SummaryMenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Statistics\TotalSummaryView.resx">
+      <DependentUpon>TotalSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Clients.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SQLite.CodeFirst">
+      <Version>1.7.0.34</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>1.0.113.7</Version>
+    </PackageReference>
+    <PackageReference Include="ValidationsCollection">
+      <Version>2.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
